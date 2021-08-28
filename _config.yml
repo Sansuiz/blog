@@ -3,7 +3,7 @@ title: 不够折腾
 email: i@rickysu.com
 description: "Life is short, Play more. "
 baseurl: ""
-url: "http://imrickysu.github.io/blog"
+url: "http://imrickysu.github.io/blog/"
 exclude: ['vendor']
 
 signoff:          Ricky # Your name.
