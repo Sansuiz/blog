@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "Day One App"
+categories: 评论
+tags:
+- App
+---
+刚花了$9.99买了[DayOne](http://dayoneapp.com/)的Mac端。下面准备从一个用户的角度分析一下我为什么买这款软件，或许对一些设计软件的人会有用吧，了解一下用户心理:)
+
+某次iOS客户端限免的时候戳了一下，还是在iPad上戳的，随便写了一个entry就放那儿了。没有同步iOS App的习惯。由于是在iPad这么个不适合写作的玩具上戳的，也不能怪我就把它这么放着了。直到到上个周末，在上海下起倾盆大雨的时候，逃到Apple Store躲雨，无聊的时候玩着iMac上预装的软件，发现Mac版DayOne还挺好玩的，于是回来先把iPhone上的DayOne载上，把玩了两天。
+
+这两天里，第一感觉是DayOne很快，很轻。它启动很迅速，想到什么立马就可以记录，不像Evernote，一打开就同步很多信息（主要是因为Evernote是主要在桌面端用来记笔记的原因吧），也不像自带的Note，功能太弱。
+
+DayOne在精简轻量的同时功能也很丰富智能，如果要贴照片，会提示把日记的时间改为照片时间。自动根据Location添加天气情况。输入支持Markdown语言。
+
+在用DayOne之前，都用另一款日记软件[OhLife](www.ohlife.com). 查了Google发现有人写了OhLife到DayOne的[转换工具](http://boonejs.tumblr.com/post/15997927013/moving-from-ohlife-to-day-one)，可以很方便导入以前的日记，于是就放心地买了Mac版DayOne了。另外，由于DayOne Mac版支持[命令行界面](http://dayoneapp.com/tools/cli-man/)，相当于开放了接口，程序员可以为它定制各种应用，[一搜一大把](https://dayone.zendesk.com/hc/en-us/articles/200258954-Day-One-Tools)，于是生态系统就起来了。
+
+DayOne相比OhLife解决了我的两个痛点。一个是我平时只用Gmail邮箱，可是打开Gmail App连接服务器认证就要好久好久，它不能做到想到就打开，打开就能写的要求，这点跟Evernote一样；第二点是OhLife回复邮件写日记的方法会绑定回复某一天的邮件就只能将写的内容绑定在那天上，但是我又有时会想起要写前两天的事情，这点我跟OhLife还提过建议，可惜人家不愿意改。
+
+总结一下DayOne能从我口袋里拿到这$9.99的原因：软件功能丰富却同时做到精简和快速，开放接口，限免iOS版，在AppleStore的Mac上做展示。缺少其中任何一点，估计我还是不会掏钱的:)
+
+---
+P.S. iOS版DayOne支持Publish功能，可以将内容生成一张在http://dayone.me 的网页，方便分享内容给别人。但是由于我用DayOne主要用来写日记，就不需要分享功能了。
+
+P.S.2 Mac DayOne的快捷键功能也很好用，Cmd+1~5, 分别对应主界面左边导航栏的5个按钮。编辑模式和浏览模式用Cmd+Enter来切换。
