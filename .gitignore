@@ -1,8 +1,0 @@
-_site
-_posts/xxxx-xx-xx-templates.markdown
-.bundle/
-vendor/
-.swp
-Gemfile.lock
-myblog.sublime-project
-myblog.sublime-workspace
