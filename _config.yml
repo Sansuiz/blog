@@ -12,7 +12,7 @@ github_repo: "https://github.com/Sansuiz/blog.git" # you code repository
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "挑剔的偏执狂，流浪的旅行者，神经质的爆裂鼓手，永无止境的迷宫设计师"
-sidebar-avatar: /img/xunyi.png     # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: https://sansuiz.github.io/blog/img/xunyi.png     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
