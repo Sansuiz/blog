@@ -103,16 +103,38 @@ service-worker: true
  Friends
 friends: [
     {
-        title: "詹彤",
-        href: "https://tomstark827.github.io/"
+        title: "陈祖辉",
+        href: "https://racns.com/"
     },{
-        title: "王雨飞",
-        href: "https://wyf0912.github.io/"
+        title: "安大略",
+        href: "http://www.anandalue.com/"
     },{
-        title: "薇拉",
-        href: "https://www.zuozuovera.com/"
+        title: "于长野",
+        href: "https://www.rabithua.club/"
     },{
-        title: "Komachi",
-        href: "https://komachi.moe/"
+        title: "曼亚灿",
+        href: "https://manyacan.com/"
+    },{
+        title: "LeeYD",
+        href: "https://www.leeyiding.com/"
+    },{
+        title: "1900",
+        href: "http://1900.live/"
+    },{
+        title: "秦枫鸢梦",
+        href: "https://blog.zwying.com/"
+    },{
+        title: "小凡梦",
+        href: "https://www.xiaofm.cn/"
+    },{
+        title: "zmmio",
+        href: "https://zmmio.com/"
+    },{
+        title: "定格咖啡馆馆长",
+        href: "https://kaix.in/"
+    }
+    ,{
+        title: "低头族",
+        href: "https://blog.dtz9.com/"
     }
 ]
