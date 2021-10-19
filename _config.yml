@@ -18,14 +18,14 @@ sidebar-avatar: https://sansuiz.github.io/blog/img/xunyi.png     # use absolute 
 
 # SNS settings
 RSS: true          
-github_username:    KeanChen
-facebook_username:  keanchen1203
+github_username:    
+facebook_username:  
 twitter_username:   XIANG_BLQ
-bilibili_username:  39477727
-instagram_username: keanchen1203
-linkedin_username:  柯安-陈-892a74163
-douban_username:    keanchen1203
-youtube_username:   UCsp9fOBKYclMhubFHk9BdqQ
+bilibili_username:  13067667
+instagram_username: 
+linkedin_username:  
+douban_username:    buyivi
+youtube_username:   
 weibo_username:     6049941845
 unsplash_username:  sansuiz
 yuque_username:     sansui_notes
@@ -81,7 +81,7 @@ kramdown:
 #ba_track_id: 
 
 # Google Analytics
-ga_track_id: 'UA-116690325-1'            # Format: UA-xxxxxx-xx
+ga_track_id: 'G-M6S7H99VS0'            # Format: UA-xxxxxx-xx
 ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
