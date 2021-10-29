@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: sansui_z@126.com
 description: "三嵗的博客，就在这里，无人问津也怡然自乐"
 keyword: "三嵗，SANSUIZ"
-url: "https://sansuiz.github.io"              # your host, for absolute URL
+url: "http://sansuiz.github.io"              # your host, for absolute URL
 baseurl: "/blog"                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
