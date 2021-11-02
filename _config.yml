@@ -1,6 +1,6 @@
 title:            Ben Brostoff
 description:
-baseurl: "/shiwen"
+baseurl: "/blog"
 url:     https://sansuiz.github.io
 signoff:          "ben"
 disqus_shortname: # disqus comment thread for post header options. ( leave blank if unwanted. )
