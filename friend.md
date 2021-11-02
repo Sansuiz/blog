@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: about/
+title: Friend
+permalink: friend/
 ---
 I am a software engineer at [Klaviyo](https://www.klaviyo.com/) (we're hiring!). On the side, I consult on a few projects and have experience in the healthcare, consumer and data-analytics spaces. I have worked on behalf of some of the top Daily Fantasy Sports (DFS) players in the world and am the author of [DraftFast](https://github.com/BenBrostoff/draftfast), GitHub's most starred open-source DFS optimization library.
 
