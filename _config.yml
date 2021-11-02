@@ -12,13 +12,13 @@ links:
     url:          /blog/about
   - name:         Posts
     url:          /blog
-  - name:         Book Recos
+  - name:         Books
     url:          /blog/books
   - name:         Email
-    url:          mailto:ben.brostoff@gmail.com
+    url:          mailto:sansui_z@126.com
     external:     true
-  - name:         GitHub
-    url:          http://github.com/BenBrostoff
+  - name:         Home
+    url:          https://sansuiz.github.io
     external:     true
 
 # Jekyll 3 now only supports Kramdown for Markdown
