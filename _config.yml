@@ -1,7 +1,6 @@
 title:            Ben Brostoff
 description:
-baseurl: "/blog"
-url:     https://sansuiz.github.io
+url:     https://sansuiz.github.io/blog/
 signoff:          "ben"
 disqus_shortname: # disqus comment thread for post header options. ( leave blank if unwanted. )
 facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
