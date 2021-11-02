@@ -5,10 +5,10 @@ tags: 亲友 信件
 date: 2019-11-05 22:00
 ---
 
-<font color=" #A8A8A8">
-可能撑着伞,
-不知道雨停了,
-等着天空放晴</font>
+
+>可能撑着伞,
+>不知道雨停了,
+>等着天空放晴
 
 ------------
 
@@ -34,6 +34,6 @@ date: 2019-11-05 22:00
 
 &emsp;&emsp;盼回信，望安好。
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;譞
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;于重庆北碚
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;二零一五年三月
+<p align="right">譞</p>
+<p align="right">于重庆北碚</p>
+<p align="right">二零一五年三月</p>
