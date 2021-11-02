@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 这是什么呢？
-tags: 生活
+tags: life
 date: 2021-10-17
 ---
 
