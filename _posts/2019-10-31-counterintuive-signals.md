@@ -2,7 +2,7 @@
 layout: post
 title: Counterintuitive Techniques
 tags: business sports
-date: 2019-10-31
+date: 2019-10-31 21:00
 ---
 
 Watching [*Free Solo*](https://www.nationalgeographic.com/films/free-solo/) earlier this year inspired me to sign up for a rock-climbing gym in March. What I've learned since then that has most helped my climbing is contrary to how my mind wants to think about climbing. Mainly, footwork and positioning are the foundation for solving hard bouldering problems.
