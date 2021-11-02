@@ -9,11 +9,11 @@ google_analytics: UA-51453428-1
 
 links:
   - name:         About
-    url:          /about
+    url:          /blog/about
   - name:         Posts
-    url:          /
+    url:          /blog
   - name:         Book Recos
-    url:          /books
+    url:          /blog/books
   - name:         Email
     url:          mailto:ben.brostoff@gmail.com
     external:     true
