@@ -1,139 +1,32 @@
-# Site settings
-title: SANSUIZ BLOG
-SEOTitle: SANSUI | BLOG
-header-img: img/01.png
-email: sansui_z@126.com
-description: "三嵗的博客，就在这里，无人问津也怡然自乐"
-keyword: "三嵗，SANSUIZ"
-url: "http://sansuiz.github.io"          # your host, for absolute URL
-baseurl: "/blog"      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/Sansuiz/blog.git" # you code repository
+title:            Ben Brostoff
+description:
+baseurl: "/shiwen"
+url:     https://sansuiz.github.io
+signoff:          "ben"
+disqus_shortname: # disqus comment thread for post header options. ( leave blank if unwanted. )
+facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
+google_analytics: UA-51453428-1
 
-# Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "复杂的人格，卑劣的性格，何必呢"
-sidebar-avatar: https://sansuiz.github.io/blog/img/xunyi.png     # use absolute URL, seeing it's used in both `/` and `/about/`
+links:
+  - name:         About
+    url:          /about
+  - name:         Posts
+    url:          /
+  - name:         Book Recos
+    url:          /books
+  - name:         Email
+    url:          mailto:ben.brostoff@gmail.com
+    external:     true
+  - name:         GitHub
+    url:          http://github.com/BenBrostoff
+    external:     true
 
-
-
-# SNS settings
-RSS: true          
-github_username:    
-facebook_username:  
-twitter_username:   XIANG_BLQ
-bilibili_username:  13067667
-instagram_username: 
-linkedin_username:  
-douban_username:    buyivi
-youtube_username:   
-weibo_username:     6049941845
-unsplash_username:  sansuiz
-yuque_username:     sansui_notes
-
-
-
-# Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-permalink: pretty
-paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-
-
-
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
-
-
-
-
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
-markdown: kramdown
-highlighter: rouge
+# Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
-
-
-
-# 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: 
-
-# Gitalk
-#gitalk:
-#  enable: true    #是否开启Gitalk评论
-#  clientID:    #生成的clientID
-#  clientSecret:   #同上
-#  repo: KeanChen.github.io    #仓库名称
-#  owner: KeanChen    #github用户名
-#  admin: KeanChen
-#  distractionFreeMode: true #是否启用类似FB的阴影遮罩
-
-
-# 统计
-
-# Analytics settings
-# Baidu Analytics
-#ba_track_id: 
-
-# Google Analytics
-ga_track_id: 'G-M6S7H99VS0'            # Format: UA-xxxxxx-xx
-ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
-
-
-
-
-
-# Featured Tags
-featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
-
-
-
-# Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
-
-
-
- Friends
-friends: [
-    {
-        title: "陈祖辉",
-        href: "https://racns.com/"
-    },{
-        title: "安大略",
-        href: "http://www.anandalue.com/"
-    },{
-        title: "于长野",
-        href: "https://www.rabithua.club/"
-    },{
-        title: "曼亚灿",
-        href: "https://manyacan.com/"
-    },{
-        title: "LeeYD",
-        href: "https://www.leeyiding.com/"
-    },{
-        title: "1900",
-        href: "http://1900.live/"
-    },{
-        title: "秦枫鸢梦",
-        href: "https://blog.zwying.com/"
-    },{
-        title: "小凡梦",
-        href: "https://www.xiaofm.cn/"
-    },{
-        title: "zmmio",
-        href: "https://zmmio.com/"
-    },{
-        title: "定格咖啡馆馆长",
-        href: "https://kaix.in/"
-    },{
-        title: "低头族",
-        href: "https://blog.dtz9.com/"
-    }
-]
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'

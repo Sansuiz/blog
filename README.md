@@ -1,9 +1,16 @@
-## 致谢
+Forked from the excellent @muan repo [scribble](https://github.com/muan/scribble).
 
-1. 这个模板是从这里 [Hux](https://github.com/Huxpro/huxpro.github.io) fork 的, 感谢这个作者。 
-2. 感谢 Jekyll、Github Pages 和 Bootstrap!
+Running locally:
 
-## License
+```
+# You should let docker create Gemfile.lock
+docker-compose up -d
+```
 
-遵循 MIT 许可证。有关详细,请参阅 [LICENSE](https://github.com/qiubaiying/qiubaiying.github.io/blob/master/LICENSE)。
+If using boot-2-docker, should be available at IP from <code>docker-machine ip default</code>.
 
+Generating tags:
+
+```
+python tag_gen.py
+```
