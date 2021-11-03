@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 招商银行、星巴克、游乐场和咖啡
-tags: 生活
+categories: 生活
+tags: 生活 杂记
 date: 2019-10-30 22:00
 ---
 

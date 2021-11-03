@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 就当作是真，将它留下吧
-tags: 信件
+categories: 生活
+tags: 生活 信件
 date: 2019-11-06 22:00
 ---
 
