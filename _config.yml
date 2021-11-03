@@ -8,16 +8,20 @@ facebook_appid:   # appid for like button, remove from /_includes/share.html if 
 google_analytics: UA-51453428-1
 
 links:
-  - name:         Friend
+  - name:         友邻
     url:          /blog/friend
-  - name:         Posts
+  - name:         文章
     url:          /blog
-  - name:         Books
+  - name:         分类
+    url:          /blog/categories
+  - name:         标签
+    url:          /blog/tags
+  - name:         书单
     url:          /blog/books
-  - name:         Email
+  - name:         邮件
     url:          mailto:sansui_z@126.com
     external:     true
-  - name:         Home
+  - name:         主页
     url:          https://buyivi.xyz/
     external:     true
 
