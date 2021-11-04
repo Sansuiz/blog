@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Favorite Books
+title: 一页书单
 permalink: books/
 ---
 
