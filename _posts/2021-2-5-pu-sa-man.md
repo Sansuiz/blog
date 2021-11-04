@@ -2,7 +2,7 @@
 layout: post
 title: 菩萨蛮，我被打成了散漫派
 categories: 随想
-tags: 随想
+tags: 随想 短歌
 date: 2021-02-05 22:00
 ---
 
