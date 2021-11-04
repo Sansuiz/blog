@@ -2,7 +2,7 @@
 layout: post
 title: 用「月光」和「手指」写一首小诗
 categories: 短歌行
-tags: 随想 短歌
+tags: 短歌
 date: 2020-09-11 21:00
 ---
 

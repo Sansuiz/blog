@@ -2,7 +2,7 @@
 layout: post
 title: 向日葵
 categories: 短歌行
-tags: 碎碎念 随想 短歌
+tags: 短歌
 date: 2020-09-08 18:00
 ---
 

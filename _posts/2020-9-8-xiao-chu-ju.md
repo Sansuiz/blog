@@ -2,7 +2,7 @@
 layout: post
 title: 用「耳朵」和「花」写一首小诗
 categories: 短歌行
-tags: 随想 短歌
+tags: 短歌
 date: 2020-09-08 20:00
 ---
 
