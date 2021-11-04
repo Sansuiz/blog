@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 送给你
-categories: 随想
-tags: 碎碎念
+categories: 短歌行
+tags: 短歌
 date: 2020-09-12 22:00
 ---
 
