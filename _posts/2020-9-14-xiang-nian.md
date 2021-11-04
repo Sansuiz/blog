@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 热情冷下来
+title: 想念-远近
 categories: 随想
 tags: 碎碎念
-date: 2020-09-12 12:00
+date: 2020-09-14 15:00
 ---
 
 <center>
-是深渊。
+想你很远，想你很近
 </center>
