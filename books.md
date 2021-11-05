@@ -4,11 +4,6 @@ title: 一页书单
 permalink: books/
 ---
 
-I always appreciate when people share their favorite books with me. [Ryan Holiday's blog](http://www.ryanholiday.net) and e-mails in particular have provided some fantastic book recommendations. Additionally, [Michael Fogus's](http://blog.fogus.me/) and [Christina Cacioppo's](http://christinacacioppo.com/) blogs inspired me to keep track of books I've finished over the years. I figured I'd do the same here. In no particular order, (because trying to rate a book is akin to trying to rate a poem, [per Dead Poets Society](https://www.youtube.com/watch?v=tpeLSMKNFO4)) here are the books I've most enjoyed.
-
-I also have a spreadsheet with [every book I've read since 2013 and plan to read](https://docs.google.com/spreadsheets/d/1ZHHhcz9Tcw3FnPvInVW6WmXX42qctmBNi-pYCedVH50/edit?usp=sharing).
-
-My favorites:
 
 * [*Buffett: The Making of an American Capitalist*, Roger Lowenstein](https://www.amazon.com/dp/B075WHGY69) - I've spent a lot of long walks listening to Buffett and Munger on Berkshire Hathaway calls. No matter the year, the principles are consistent and simple. Find situations where the incentives make sense, managers have a track record of allocating capital well, you understand the few key factors that drive outcomes and are committed to staying the course for years without looking to others for mark to markets. I think this advice goes far beyond investing and to me help explain in Lowenstein's book how Buffett built Berkshire. He didn't live where other investors lived, didn't buy the same stocks, didn't use the same techniques. In a world where advice is everywhere, Buffett to me is a reminder that there is no one course to finding your life's passion and that first principle's thinking may lead you to surprising conclusions. 
 
