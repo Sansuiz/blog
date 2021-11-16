@@ -2,8 +2,8 @@ title:     SANSUI | BLOG
 description: 三嵗的生活博客
 baseurl: "/blog"
 url:     https://buyivi.xyz
-signoff:          "Xuny"
-disqus_shortname: # disqus comment thread for post header options. ( leave blank if unwanted. )
+signoff:          "Xuny | XIANGBLQ"
+disqus_shortname: sansuiz-blog # disqus comment thread for post header options. ( leave blank if unwanted. )
 facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
 google_analytics: G-M6S7H99VS0
 
