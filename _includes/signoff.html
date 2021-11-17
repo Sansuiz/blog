@@ -13,9 +13,15 @@
   </p>
   <p><b>留言</b>请移步 <a href="https://support.qq.com/products/315295"> SANSUIZ | 兔小巢 </a> </p>
 
-	       <!-- disqus 评论框 start -->
+	      <!-- disqus 评论框 start -->
 	       {% if site.disqus.enable %}
-                      {% include disqus.html %}
-           {% endif %}
-	       <!-- disqus 评论框 end -->
+         {% include disqus.html %}
+         {% endif %}
+	      <!-- disqus 评论框 end -->
+
+        <!-- Valine 评论框 start -->
+	       {% if site.valine.enable %}
+         {% include valine_comments.html %}
+         {% endif %}
+        <!-- Valine 评论框 end -->
 </p>
