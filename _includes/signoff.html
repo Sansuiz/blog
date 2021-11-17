@@ -13,7 +13,9 @@
   </p>
   <p><b>留言</b>请移步 <a href="https://support.qq.com/products/315295"> SANSUIZ | 兔小巢 </a> </p>
 
-{% if page.disqus == 'y' %}
-{% include disqus.html %}
-{% endif %}
+	       <!-- disqus 评论框 start -->
+	       [% if site.disqus.enable %]
+                      [% include disqus.html %]
+           [% endif %]
+	       <!-- disqus 评论框 end -->
 </p>
