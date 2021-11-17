@@ -4,6 +4,7 @@ title: 雨照晴
 categories: 短歌行
 tags: 短歌
 date: 2016-12-30 22:00
+comments: true
 ---
 
 
