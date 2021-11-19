@@ -95,11 +95,15 @@ date: 2021-11-16 22:00
 - 避免平凡——不善于将大愿景分解成小目标，可能会陷入沮丧
 - 容易倦怠——缺少释放自己的选择，若没有方式平衡，可能精疲力竭
 
-#### 恋爱（Romantic Relationships）
+------
 
->“Love comes more naturally to the human heart than its opposite.”<br>
-> — — NELSON MANDELA
+- 恋爱
+- 友谊
+- 为人父母
+- 职业道路
+- 工作场所习惯
 
+这几个就不谈了，感觉也没什么可谈的。
 
 
 
