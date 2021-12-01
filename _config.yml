@@ -16,8 +16,6 @@ links:
     url:          /blog/categories
   - name:         标签
     url:          /blog/tags
-  - name:         书单
-    url:          /blog/books
   - name:         邮件
     url:          mailto:sansui_z@126.com
     external:     true
