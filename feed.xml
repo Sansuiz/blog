@@ -1,6 +1,3 @@
----
-layout:
----
 <?xml version="1.0" encoding="UTF-8"?>
 {% capture srcbase %}src="{{site.url}}/{% endcapture %}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -8,15 +5,15 @@ layout:
     <title>{{ site.title }}</title>
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" type="application/rss+xml" />
     {% assign posts = site.posts | where: "feature", 1 %}
     {% for post in posts limit:10 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>{{ post.content | replace: 'src="/', srcbase | xml_escape }}</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ site.url }}{{ post.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <link>{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
       </item>
     {% endfor %}
   </channel>
