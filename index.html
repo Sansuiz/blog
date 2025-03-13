@@ -2,7 +2,7 @@
 title: 乐天
 layout: default
 header_content: |
-  <span class="smol"><a href="/EN">English</a> / 中文简体</span>
+  <span class="smol"><a href="{{ site.baseurl }}/EN">English</a> / 中文简体</span>
   <!-- 心知天气固定插件 -->
   <div align="right" id="tp-weather-widget"></div>
   <script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
@@ -53,7 +53,7 @@ header_content: |
 
   {% assign i = i | plus: 1 %}
   {% capture content do %}
-    这里有我的博客朋友 → <a href="https://buyivi.xyz/blog/friends/">友邻 ↗</a>。
+    这里有我的博客朋友 → <a href="{{ site.baseurl }}/friends/">友邻 ↗</a>。
   {% endcapture %}{% include line.html i=i content=content %}
 
   {% assign i = i | plus: 1 %}
@@ -70,7 +70,7 @@ header_content: |
 {% for post in posts %}
   {% assign i = i | plus: 1 %}
   {% capture content do %}
-    <a href="{{ post.url }}">{{ post.title }}</a>
+    <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
   {% endcapture %}{% include line.html i=i content=content %}
 {% endfor %}
 
@@ -78,7 +78,7 @@ header_content: |
 {% for post in posts %}
   {% assign i = i | plus: 1 %}
   {% capture content do %}
-    <a href="{{ post.url }}">{{ post.title }}</a> <time>{{ post.date | date_to_string }}</time>
+    <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a> <time>{{ post.date | date_to_string }}</time>
   {% endcapture %}{% include line.html i=i content=content %}
 {% endfor %}
 
@@ -93,3 +93,4 @@ header_content: |
 </div>
 
 <hr class="hr">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/yiyue.css">
