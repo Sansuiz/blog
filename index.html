@@ -53,12 +53,12 @@ header_content: |
 
   {% assign i = i | plus: 1 %}
   {% capture content do %}
-    这里有我的博客朋友 → <a href="https://buyivi.xyz/friends/">友邻 ↗</a>。
+    这里有我的博客朋友 → <a href="https://buyivi.xyz/blog/friends/">友邻 ↗</a>。
   {% endcapture %}{% include line.html i=i content=content %}
 
   {% assign i = i | plus: 1 %}
   {% capture content do %}
-    随意折腾了一个 → <a href="https://buyivi.xyz/yiyue/">已阅 ↗</a>，和一个 → <a href="https://buyivi.xyz/gallery/">图集 ↗</a>。
+    随意折腾了一个 → <a href="https://buyivi.xyz/blog/yiyue/">已阅 ↗</a>，和一个 → <a href="https://buyivi.xyz/gallery/">图集 ↗</a>。
   {% endcapture %}{% include line.html i=i content=content %}
 </ul>
 
@@ -70,7 +70,7 @@ header_content: |
 {% for post in posts %}
   {% assign i = i | plus: 1 %}
   {% capture content do %}
-    <a href="{{ post.url }}">{{ post.title }}</a>
+    <a href="{{ post.baseurl }}">{{ post.title }}</a>
   {% endcapture %}{% include line.html i=i content=content %}
 {% endfor %}
 
@@ -78,7 +78,7 @@ header_content: |
 {% for post in posts %}
   {% assign i = i | plus: 1 %}
   {% capture content do %}
-    <a href="{{ post.url }}">{{ post.title }}</a> <time>{{ post.date | date_to_string }}</time>
+    <a href="{{ post.baseurl }}">{{ post.title }}</a> <time>{{ post.date | date_to_string }}</time>
   {% endcapture %}{% include line.html i=i content=content %}
 {% endfor %}
 
@@ -87,7 +87,7 @@ header_content: |
 <hr class="hr">
 
 {% assign note = site.data.notes[0] %}
-<h2 class="text">便签 <a href="/notes" class="smol">【全】</a> <span class="smol">[{{ note.date | date: "%b %d, %Y" }}]</span></h2>
+<h2 class="text">便签 <a href="/blog/notes" class="smol">【全】</a> <span class="smol">[{{ note.date | date: "%b %d, %Y" }}]</span></h2>
 <div class="note">
   {{ note.content | markdownify }}
 </div>
