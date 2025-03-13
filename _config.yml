@@ -1,7 +1,7 @@
 title:            SANSUIZ
 description:      乐天，只争朝夕
 url:              https://buyivi.xyz
-baseurl:          "/blog"
+baseurl:          /blog
 permalink:        pretty
 timezone:         Asia/Shenzhen
 kramdown:
