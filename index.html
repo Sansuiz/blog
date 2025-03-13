@@ -2,7 +2,7 @@
 title: 乐天
 layout: default
 header_content: |
-  <span class="smol"><a href="{{ site.baseurl }}/EN">English</a> / 中文简体</span>
+  <span class="smol"><a href="/blog/EN">English</a> / 中文简体</span>
   <!-- 心知天气固定插件 -->
   <div align="right" id="tp-weather-widget"></div>
   <script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
@@ -48,7 +48,7 @@ header_content: |
 <ul class="terminal">
   {% assign i = i | plus: 1 %}
   {% capture content do %}
-    把自己的碎碎念放在<a href="/blog/notes">便签 ↗</a>里，偶尔也会想要写一些文字在<a href="/blog/wenji">BLOG ↗</a>上。
+    把自己的碎碎念放在<a href="{{ site.baseurl }}/notes">便签 ↗</a>里，偶尔也会想要写一些文字在<a href="/wenji">BLOG ↗</a>上。
   {% endcapture %}{% include line.html i=i content=content %}
 
   {% assign i = i | plus: 1 %}
@@ -58,7 +58,7 @@ header_content: |
 
   {% assign i = i | plus: 1 %}
   {% capture content do %}
-    随意折腾了一个 → <a href="https://buyivi.xyz/blog/yiyue/">已阅 ↗</a>，和一个 → <a href="https://buyivi.xyz/gallery/">图集 ↗</a>。
+    随意折腾了一个 → <a href="{{ site.baseurl }}/yiyue/">已阅 ↗</a>，和一个 → <a href="https://buyivi.xyz/gallery/">图集 ↗</a>。
   {% endcapture %}{% include line.html i=i content=content %}
 </ul>
 
@@ -93,4 +93,3 @@ header_content: |
 </div>
 
 <hr class="hr">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/yiyue.css">
