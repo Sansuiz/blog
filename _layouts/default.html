@@ -11,9 +11,9 @@
     <link rel="token_endpoint" href="https://github-indieauth.herokuapp.com/token">
     <link rel="micropub" href="https://site-endpoint.herokuapp.com/micropub">
     {% if page.collection == "posts" %}
-      <link href="/blog/assets/syntax.css" rel="stylesheet" type="text/css">
+      <link href="/assets/syntax.css" rel="stylesheet" type="text/css">
     {% endif %}
-    <link href="/blog/assets/new.css" rel="stylesheet" type="text/css">
+    <link href="/assets/new.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
       <title>{{ page.title }} - {{ site.title }}</title>
       <meta content="{{ page.title }} - {{ site.title }}" property="og:title">
@@ -79,8 +79,8 @@
       })();
       </script>
 
-      <a href="/blog">
-        <img src="/blog/assets/sansuiz.gif"/>
+      <a href="/">
+        <img src="/assets/sansuiz.gif"/>
       </a>
       <h1 class="h1">
         {{ page.title }}<span class="blink">|</span>
