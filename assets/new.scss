@@ -176,12 +176,12 @@ footer {
 
 blockquote {
   &::before {
-    content: '“';
+    content: '“ ';
     font-size: 2rem;
     position: absolute;
     margin-left: -.5em;
-    color: #244685;
-    font-family: "楷体", KaiTi, STKaiti;
+    color: #ed556a;
+    font-family: sans-serif;
   }
 }
 
