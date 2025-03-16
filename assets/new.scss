@@ -2,6 +2,10 @@
 ---
 
 body {
+  background: rgba(249,249,249, var(--bg-opacity, 1));
+  background-image: var(--bg-image, none);
+  background-size: cover;
+  background-attachment: fixed;
   background: #f9f9f9;
   color: #454545;
   font-family: 'Cousine', monospace;
@@ -12,6 +16,9 @@ body {
   word-wrap: break-word;
 }
 
+// 背景图片配置说明
+// --bg-image: url(图片路径);
+// --bg-opacity: 0.9; // 透明度0-1
 a {
   color: #ed556a;
 }
