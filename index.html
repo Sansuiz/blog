@@ -44,48 +44,6 @@ header_content: |
 
 <hr class="hr">
 
-<h2 class="text">折腾</h2>
-<ul class="terminal">
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    把自己的碎碎念放在<a href="{{ site.baseurl }}/notes">便签 ↗</a>里，偶尔也会想要写一些文字在<a href="/wenji">BLOG ↗</a>上。
-  {% endcapture %}{% include line.html i=i content=content %}
-
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    这里有我的博客朋友 → <a href="{{ site.baseurl }}/friends/">友邻 ↗</a>。
-  {% endcapture %}{% include line.html i=i content=content %}
-
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    随意折腾了一个 → <a href="{{ site.baseurl }}/yiyue/">已阅 ↗</a>，和一个 → <a href="{{ site.baseurl }}/gallery/">图集 ↗</a>。
-  {% endcapture %}{% include line.html i=i content=content %}
-</ul>
-
-<hr class="hr">
-
-<h2 class="text">文章</h2>
-<ul aria-label="posts" class="terminal">
-{% assign posts = site.pages | where: "feature", 1 %}
-{% for post in posts %}
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
-  {% endcapture %}{% include line.html i=i content=content %}
-{% endfor %}
-
-{% assign posts = site.posts | where: "feature", 1 %}
-{% for post in posts %}
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a> <time>{{ post.date | date_to_string }}</time>
-  {% endcapture %}{% include line.html i=i content=content %}
-{% endfor %}
-
-</ul>
-
-<hr class="hr">
-
 {% assign note = site.data.notes[0] %}
 <h2 class="text">便签 <a href="/notes" class="smol">【全】</a> <span class="smol">[{{ note.date | date: "%b %d, %Y" }}]</span></h2>
 <div class="note">
