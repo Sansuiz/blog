@@ -45,7 +45,7 @@ header_content: |
 <hr class="hr">
 
 {% assign note = site.data.notes[0] %}
-<h2 class="text">便签 <a href="/notes" class="smol">【全】</a> <span class="smol">[{{ note.date | date: "%b %d, %Y" }}]</span></h2>
+<h2 class="text"><a href="/notes" class="smol">【全】</a> <span class="smol">[{{ note.date | date: "%b %d, %Y" }}]</span></h2>
 <div class="note">
   {{ note.content | markdownify }}
 </div>
