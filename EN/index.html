@@ -1,5 +1,5 @@
 ---
-title: SANSUIZ
+title: Notes
 layout: default
 footer_content: |
   Living life over.
@@ -56,53 +56,6 @@ header_content: |
   {% capture content do %}
     五星红旗，迎风飘扬 ~ 
   {% endcapture %}{% include line.html i=i content=content %}
-</ul>
-
-<hr class="hr">
-
-<h2 class="text">Sundries</h2>
-<ul class="terminal">
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    Although do not know programming, but these personal station or let me in the Internet this piece of the sea will not drift everywhere.
-  {% endcapture %}{% include line.html i=i content=content %}
-
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    So, made a few small boats like this.
-  {% endcapture %}{% include line.html i=i content=content %}
-
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    I keep <a href="{{ site.baseurl }}/notes">NOTES ↗</a> and <a href="/wenji">BLOGS ↗</a> about my life.
-  {% endcapture %}{% include line.html i=i content=content %}
-
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    My → → <a href="{{ site.baseurl }}/friends/">Friend ↗</a>。
-  {% endcapture %}{% include line.html i=i content=content %}
-</ul>
-
-<hr class="hr">
-
-<h2 class="text">Posts</h2>
-
-<ul aria-label="posts" class="terminal">
-{% assign posts = site.pages | where: "feature", 1 %}
-{% for post in posts %}
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
-  {% endcapture %}{% include line.html i=i content=content %}
-{% endfor %}
-
-{% assign posts = site.posts | where: "feature", 1 %}
-{% for post in posts %}
-  {% assign i = i | plus: 1 %}
-  {% capture content do %}
-    <a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a> <time>{{ post.date | date_to_string }}</time>
-  {% endcapture %}{% include line.html i=i content=content %}
-{% endfor %}
 </ul>
 
 <hr class="hr">
