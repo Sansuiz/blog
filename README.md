@@ -1,4 +1,4 @@
-# buyivi.xyz
+# sansuiz.cn
 
 这是一个主页。
 

@@ -16,7 +16,7 @@ footer_content: "提倡者是什么样的呢"
 
 所以，带着这个疑问，来看一看最终的结果，如下。
 
-![提倡者人格](https://buyivi.xyz/images/tu/2021/211116.png)
+![提倡者人格](https://sansuiz.cn/images/tu/2021/211116.png)
 
 ### 结果
 
