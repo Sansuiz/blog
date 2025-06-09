@@ -24,8 +24,6 @@ title: 便签
 </div>
 </details>
 
-<br>
-
 <ul class="notes">
 {% for note in site.data.notes %}
 <li class="note {% if note.private %}private-note{% endif %} {% if note.favorite %}favorite-note{% endif %}" 
