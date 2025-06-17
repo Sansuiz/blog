@@ -24,7 +24,7 @@
 /* 简约可爱风格胶囊按钮 */
 .capsule-link.cute {
   display: inline-block;
-  padding: 0.1em 1em;
+  padding: 0 0.75em;
   border-radius: 1.5em;
   background-color: #ffebf3;
   color: #ff6b9d;
@@ -32,63 +32,12 @@
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 2px 5px rgba(255,107,157,0.2);
+  line-height: 1;
+  font-size: 0.9em;
 }
 
 .capsule-link.cute:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 10px rgba(255,107,157,0.3);
   background-color: #ffd6e7;
-}
-
-/* 艺术水彩风格胶囊按钮 */
-.capsule-link.artistic {
-  display: inline-block;
-  padding: 0.2em 1.2em;
-  border-radius: 2em;
-  background: transparent;
-  color: #5e4b8b;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: color 0.4s ease;
-  border: 1px solid transparent;
-}
-
-.capsule-link.artistic::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #e0c3fc, #8ec5fc);
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.6s ease;
-  mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M20,20 Q30,10 40,20 T60,20 T80,20" fill="none" stroke="black" stroke-width="2"/></svg>');
-  mask-size: 200% 200%;
-  mask-position: center;
-}
-
-.capsule-link.artistic:hover {
-  color: white;
-  border-color: rgba(94, 75, 139, 0.3);
-}
-
-.capsule-link.artistic:hover::before {
-  opacity: 1;
-  animation: watercolor 1.5s ease infinite alternate;
-}
-
-@keyframes watercolor {
-  0% {
-    mask-size: 180% 180%;
-    mask-position: 30% 30%;
-  }
-  100% {
-    mask-size: 220% 220%;
-    mask-position: 70% 70%;
-  }
 }
