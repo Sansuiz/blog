@@ -1,7 +1,6 @@
-/* 简约胶囊链接样式 */
+/* 简约胶囊链接样式（无头像版） */
 .capsule-link {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   height: 1em;
   padding: 0 0.75em;
   border-radius: 1em;
@@ -19,18 +18,5 @@
   color: #4a6ea9;
 }
 
-.capsule-link::before {
-  content: "";
-  display: inline-block;
-  width: 0.8em;
-  height: 0.8em;
-  margin-right: 0.5em;
-  border-radius: 50%;
-  background-color: #a0b4d0;
-  background-size: cover;
-  background-position: center;
-  vertical-align: middle;
-}
-
 /* 使用示例 */
-/* [@好友](https://example.com){:class="capsule-link" style="--avatar: url('头像URL')"} */
+/* [@好友](https://example.com){:class="capsule-link"} */

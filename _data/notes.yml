@@ -1,6 +1,6 @@
 - date: 2025/06/18 00:01
   content: |
-    尝试一个内嵌文本的胶囊按钮，[@SANSUIZ](https://sansuiz.cn/){:class="capsule-link" style="--avatar: url('https://blog.sansuiz.cn/assets/fav.png')"}的胶囊按钮。
+    尝试一个内嵌文本的胶囊按钮，[@SANSUIZ](https://sansuiz.cn/){:class="capsule-link"}是我自己的主页。
   tags: [折腾, 博客]
 
 - date: 2025/06/11 02:20
