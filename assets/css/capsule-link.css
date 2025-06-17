@@ -19,44 +19,44 @@
 }
 
 .capsule-link.yuan:hover::before {
-    content: attr(data-text);
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-    padding: 8px 12px;
-    border-radius: 12px;
-    font-size: 14px;
-    min-width: 100%;
-    width: auto;
-    white-space: nowrap;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    opacity: 0;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    box-sizing: border-box;
-  }
-  
-  .capsule-link.yuan:hover::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 15px;
-    transform: translateY(-5px);
-    border-width: 6px;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent;
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-  
-  .capsule-link.yuan:hover::before,
-  .capsule-link.yuan:hover::after {
-    opacity: 1;
-    transform: translateY(-15px);
-  }
+  content: attr(data-text);
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  min-width: 100%;
+  width: auto;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.capsule-link.yuan:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 15px;
+  transform: translateY(-5px);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.capsule-link.yuan:hover::before,
+.capsule-link.yuan:hover::after {
+  opacity: 1;
+  transform: translateY(-15px);
+}
 
 /* 气泡浮动效果链接样式 */
 .capsule-link.bubble {
