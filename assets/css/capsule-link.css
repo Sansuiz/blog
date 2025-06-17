@@ -1,5 +1,5 @@
 /* 简约胶囊链接样式（无头像版） */
-.capsule-link {
+.capsule-link.yuan {
   display: inline-block;
   height: 1em;
   padding: 0 0.75em;
@@ -12,7 +12,7 @@
   font-size: 0.9em;
 }
 
-.capsule-link:hover {
+.capsule-link.yuan:hover {
   background-color: rgba(200, 220, 240, 0.3);
   color: #4a6ea9;
 }
