@@ -40,33 +40,6 @@
   background-color: #ffd6e7;
 }
 
-/* 打字机效果 */
-.capsule-link.typewriter {
-  display: inline;
-  padding: 0 0.2em;
-  background: transparent;
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-}
-
-.capsule-link.typewriter::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background: rgba(200,220,240,0.3);
-  transition: width 0.3s ease;
-  z-index: -1;
-}
-
-.capsule-link.typewriter:hover::after {
-  width: 100%;
-}
-
-
 /* 艺术水彩风格胶囊按钮 */
 .capsule-link.artistic {
   display: inline-block;
