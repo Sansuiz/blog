@@ -1,6 +1,6 @@
 - date: 2025/06/18 00:01
   content: |
-    这是示例文本，包含[@好友](https://example.com){:class="capsule-link" style="--avatar: url('头像URL')"}的胶囊按钮。
+    尝试一个内嵌文本的胶囊按钮，[@SANSUIZ](https://sansuiz.cn/){:class="capsule-link" style="--avatar: url('https://blog.sansuiz.cn/assets/fav.png')"}的胶囊按钮。
   tags: [折腾, 博客]
 
 - date: 2025/06/11 02:20
