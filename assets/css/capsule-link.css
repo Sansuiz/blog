@@ -22,8 +22,8 @@
   content: attr(data-text);
   position: absolute;
   bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  left: 0;
+  transform: translateY(-10px);
   background: rgba(255, 255, 255, 0.9);
   color: #333;
   padding: 8px 12px;
@@ -34,19 +34,20 @@
   opacity: 0;
   transition: all 0.3s ease;
   pointer-events: none;
+  max-width: 80%;
 }
 
 .capsule-link.yuan:hover::before {
   opacity: 1;
-  transform: translateX(-50%) translateY(-15px);
+  transform: translateY(-15px);
 }
 
 .capsule-link.yuan::after {
   content: "";
   position: absolute;
   bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-5px);
+  left: 15px;
+  transform: translateY(-5px);
   border-width: 6px;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent;
@@ -56,7 +57,7 @@
 
 .capsule-link.yuan:hover::after {
   opacity: 1;
-  transform: translateX(-50%) translateY(-9px);
+  transform: translateY(-9px);
 }
 
 /* 气泡浮动效果链接样式 */
