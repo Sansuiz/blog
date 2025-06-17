@@ -2,7 +2,7 @@
   content: |
     尝试一个内嵌文本的胶囊按钮。
     
-    [@SANSUIZ](https://sansuiz.cn/){:class="capsule-link yuan"}是我自己的主页。
+    [@SANSUIZ](https://sansuiz.cn/){:class="capsule-link yuan" data-text="这是好友的链接"}是我自己的主页。
 
     [@SANSUIZ](https://sansuiz.cn/){:class="capsule-link cute"}这是可爱版。
 

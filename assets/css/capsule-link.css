@@ -10,11 +10,53 @@
   color: #d82020;
   line-height: 1;
   font-size: 0.9em;
+  position: relative;
 }
 
 .capsule-link.yuan:hover {
   background-color: rgba(200, 220, 240, 0.3);
   color: #4a6ea9;
+}
+
+.capsule-link.yuan:hover::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.capsule-link.yuan:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-15px);
+}
+
+.capsule-link.yuan::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.capsule-link.yuan:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-9px);
 }
 
 /* 气泡浮动效果链接样式 */
