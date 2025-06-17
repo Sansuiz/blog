@@ -17,8 +17,44 @@
   color: #4a6ea9;
 }
 
+/* 气泡浮动效果链接样式 */
+.capsule-link.bubble {
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  background-color: rgba(255,255,255,0.9);
+  color: #333;
+  border-radius: 1.5em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  line-height: 1;
+  font-size: 0.9em;
+}
+
+.capsule-link.bubble:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.capsule-link.bubble::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.capsule-link.bubble:hover::before {
+  opacity: 1;
+}
+
 /* 使用示例 */
-/* [@好友](https://example.com){:class="capsule-link"} */
+/* [@好友](https://example.com){:class="capsule-link bubble"} */
 
 
 /* 简约可爱风格胶囊按钮 */
@@ -41,49 +77,3 @@
   box-shadow: 0 5px 10px rgba(255,107,157,0.3);
   background-color: #ffd6e7;
 }
-
-/* 霓虹灯效果链接样式 */
-.capsule-link.neon {
-  display: inline;
-  padding: 0.1em 0.5em;
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.capsule-link.neon:hover {
-  animation: neon-pulse 1.5s infinite alternate;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de;
-}
-
-@keyframes neon-pulse {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.7;
-  }
-}
-
-.capsule-link.neon::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #ff00de;
-  box-shadow: 0 0 5px #ff00de, 0 0 10px #ff00de;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-.capsule-link.neon:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* 使用示例 */
-/* [@好友](https://example.com){:class="capsule-link neon"} */
