@@ -1,0 +1,35 @@
+/* 胶囊链接样式 */
+.capsule-link {
+  display: inline-flex;
+  align-items: center;
+  height: 1.5em;
+  padding: 0 0.5em 0 0;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+}
+
+.capsule-link:hover {
+  background-color: rgba(173, 216, 230, 0.5);
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.capsule-link::before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
+  border-radius: 50%;
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 在HTML中需要这样使用：
+<a href="https://example.com" class="capsule-link" style="--avatar: url('头像URL')">昵称</a>
+*/
