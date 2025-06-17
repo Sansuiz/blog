@@ -21,7 +21,7 @@
 /* [@好友](https://example.com){:class="capsule-link"} */
 
 
-/* 可爱风格胶囊按钮 */
+/* 简约可爱风格胶囊按钮 */
 .capsule-link.cute {
   display: inline-block;
   padding: 0.1em 1em;
@@ -32,42 +32,10 @@
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 2px 5px rgba(255,107,157,0.2);
-  position: relative;
-  overflow: hidden;
 }
 
 .capsule-link.cute:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 10px rgba(255,107,157,0.3);
   background-color: #ffd6e7;
-}
-
-.capsule-link.cute::before {
-  content: "❤";
-  position: absolute;
-  left: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-.capsule-link.cute:hover::before {
-  left: 5px;
-  opacity: 1;
-}
-
-.capsule-link.cute::after {
-  content: "→";
-  position: absolute;
-  right: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-.capsule-link.cute:hover::after {
-  right: 5px;
-  opacity: 1;
 }
