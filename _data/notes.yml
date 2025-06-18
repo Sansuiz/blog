@@ -2,13 +2,13 @@
   content: |
     尝试一个内嵌文本的胶囊按钮。
 
-    [@SANSUIZ](https://sansuiz.cn/)是我的原始外链样。
+    [@SANSUIZ](https://sansuiz.cn/)是我的原始外链样式，以下是新增的胶囊按钮样式。
     
-    [@SANSUIZ](https://sansuiz.cn/){:class="capsule-link yuan" data-text="这是好友的链接"}是我自己的主页。
+    >这是简约版（但有悬浮气泡）：[@SANSUIZ](https://sansuiz.cn/){:class="capsule-link yuan" data-text="这是主页链接"}。
 
-    [@SANSUIZ](https://sansuiz.cn/){:class="capsule-link cute"}这是可爱版。
+    >这是可爱版：[@SANSUIZ](https://sansuiz.cn/){:class="capsule-link cute"}。
 
-    [@SANSUIZ](https://sansuiz.cn/){:class="capsule-link bubble"}这是气泡版。
+    >这是纯气泡版：[@SANSUIZ](https://sansuiz.cn/){:class="capsule-link bubble"}。
   tags: [折腾, 博客]
 
 - date: 2025/06/11 02:20
