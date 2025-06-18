@@ -403,23 +403,25 @@ document.addEventListener('copy', e => {
 .note-tags a.tag-clickable::after {
   content: '';
   position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 0;
-  height: 1px;
-  background: #333;
-  transition: width 0.3s ease-out;
+  top: -0.2em;
+  right: -0.4em;
+  width: 6px;
+  height: 6px;
+  background: #ed627e;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(100%, -100%) rotate(0deg);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/*
 .note-tags a.tag-clickable:hover {
-  color: #333;
+  color: #108adc;
 }
 
 .note-tags a.tag-clickable:hover::after {
-  width: 100%;
+  opacity: 1;
+  transform: translate(-50%, 50%) rotate(360deg);
 }
-*/
 
 /* 清除按钮 */
 .filter-status {
