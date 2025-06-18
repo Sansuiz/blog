@@ -1,6 +1,8 @@
 - date: 2025/06/18 00:01
   content: |
     尝试一个内嵌文本的胶囊按钮。
+
+    [@SANSUIZ](https://sansuiz.cn/)是我的原始外链样。
     
     [@SANSUIZ](https://sansuiz.cn/){:class="capsule-link yuan" data-text="这是好友的链接"}是我自己的主页。
 
