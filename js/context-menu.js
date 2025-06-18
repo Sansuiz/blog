@@ -4,12 +4,12 @@ menu.className = 'context-menu';
 
 // 菜单项配置
 const items = [
-  { name: '♾️ 刷新页面', action: () => location.reload() },
-  { name: '🌿 返回首页', action: () => location.href = '/' },
-  { name: '🍵 博客友人', action: () => location.href = '/friends/' },
-  { name: '🪢 备注留言', action: () => window.open('https://f.wps.cn/g/hQQzfcZC/', '_blank') },
-  { name: '🗞️ 三歳文集', action: () => window.open('https://sansuiz.cn/wenji/', '_blank') },
-  { name: '🎫 SANSUIZ', action: () => location.href = 'https://sansuiz.cn/'},
+  { name: '刷新页面', action: () => location.reload() },
+  { name: '返回首页', action: () => location.href = '/' },
+  { name: '博客友人', action: () => location.href = '/friends/' },
+  { name: '备注留言', action: () => window.open('https://f.wps.cn/g/hQQzfcZC/', '_blank') },
+  { name: '三歳文集', action: () => window.open('https://wenji.sansuiz.cn/', '_blank') },
+  { name: 'SANSUIZ', action: () => location.href = 'https://sansuiz.cn/'},
 ];
 
 // 构建菜单项
