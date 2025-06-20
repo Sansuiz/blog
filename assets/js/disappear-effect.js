@@ -1,123 +1,143 @@
+/**
+ * 初始化文字消失效果
+ */
 function initDisappearEffect() {
+  // 获取所有需要应用消失效果的笔记元素
   const notes = document.querySelectorAll('.note[data-disappear="true"]');
-  if (!notes.length) return;
-
+  
   notes.forEach(note => {
-    const content = note.querySelector('.note-content');
-    if (!content) return;
-
-    // 获取所有文本节点
-    const textNodes = getTextNodes(content);
-    if (!textNodes.length) return;
-
-    // 处理每个文本节点
+    // 获取元素内的所有文本节点
+    const textNodes = getTextNodes(note);
+    
     textNodes.forEach(node => {
-      // 将文本拆分为单个字符
       const text = node.nodeValue;
       const chars = text.split('');
+      // 随机选择60%的字符应用效果
+      const selectedIndices = selectRandomChars(chars.length);
       
-      // 随机选择60%的字符
-      const charsToFade = selectRandomChars(chars, 0.6);
+      const parent = node.parentNode;
+      const spanWrapper = document.createElement('span');
+      spanWrapper.className = 'disappear-effect';
       
-      // 用span包裹每个字符
-      const fragment = document.createDocumentFragment();
-      chars.forEach((char, i) => {
-        const span = createDisappearingChar(char);
-        
-        if (charsToFade.includes(i)) {
-          // 为每个字符设置随机延迟
-          const delay = Math.random() * 3000;
-          span.style.transitionDelay = `${delay}ms`;
-          
-          // 添加消失效果
-          setTimeout(() => {
-            span.classList.add('faded');
-            createDotsAtPosition(span, note);
-          }, delay + 500);
+      // 构建新的HTML内容，为选中的字符添加span标签
+      const newContent = chars.map((char, index) => {
+        if (selectedIndices.includes(index)) {
+          // 为每个字符添加随机延迟和零宽度空格
+          return `<span style="transition-delay: ${Math.random() * 2}s">${char}​</span>`;
         }
-        
-        fragment.appendChild(span);
-      });
+        return char;
+      }).join('');
       
-      // 替换原始文本节点
-      node.parentNode.replaceChild(fragment, node);
+      spanWrapper.innerHTML = newContent;
+      parent.replaceChild(spanWrapper, node);
+      
+      // 延迟执行以确保DOM更新完成
+      setTimeout(() => {
+        const spans = spanWrapper.querySelectorAll('span');
+        spans.forEach(span => {
+          // 根据设置的延迟时间触发消失效果
+          setTimeout(() => {
+            span.classList.add('hidden');
+            // 在字符位置创建小圆点
+            createDotsAtPosition(note, span.offsetLeft, span.offsetTop);
+          }, parseFloat(span.style.transitionDelay) * 1000);
+        });
+      }, 100);
     });
   });
-
-  // 阻止复制消失的文本
+  
+  // 防止复制包含零宽度空格的文本
   document.addEventListener('copy', (e) => {
-    const selection = window.getSelection();
-    if (selection.toString().includes('\u200B')) {
+    if (window.getSelection().toString().includes('\u200B')) {
       e.preventDefault();
     }
   });
 }
 
+/**
+ * 获取元素内的所有文本节点
+ * @param {HTMLElement} element - 要搜索的DOM元素
+ * @returns {Array} 文本节点数组
+ */
 function getTextNodes(element) {
   const walker = document.createTreeWalker(
     element,
     NodeFilter.SHOW_TEXT,
-    { acceptNode: node => node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT },
+    null,
     false
   );
   
-  const nodes = [];
+  const textNodes = [];
   let node;
-  while (node = walker.nextNode()) nodes.push(node);
-  return nodes;
-}
-
-function selectRandomChars(chars, percentage) {
-  const indices = chars.map((_, i) => i);
-  return indices
-    .sort(() => Math.random() - 0.5)
-    .slice(0, Math.floor(chars.length * percentage));
-}
-
-function createDotsAtPosition(element, container) {
-  const rect = element.getBoundingClientRect();
-  const containerRect = container.getBoundingClientRect();
-  const colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF'];
   
-  // 创建1-2个圆点
+  while (node = walker.nextNode()) {
+    if (node.nodeValue.trim() !== '') {
+      textNodes.push(node);
+    }
+  }
+  
+  return textNodes;
+}
+
+/**
+ * 随机选择指定数量的字符索引
+ * @param {number} totalChars - 总字符数
+ * @returns {Array} 选中的字符索引数组
+ */
+function selectRandomChars(totalChars) {
+  // 计算要选择的字符数量（总字符的60%）
+  const count = Math.floor(totalChars * 0.6);
+  const indices = [];
+  
+  // 随机选择不重复的索引
+  while (indices.length < count) {
+    const randomIndex = Math.floor(Math.random() * totalChars);
+    if (!indices.includes(randomIndex)) {
+      indices.push(randomIndex);
+    }
+  }
+  
+  return indices;
+}
+
+/**
+ * 在指定位置创建小圆点
+ * @param {HTMLElement} container - 容器元素
+ * @param {number} x - 水平位置
+ * @param {number} y - 垂直位置
+ */
+function createDotsAtPosition(container, x, y) {
+  // 随机生成1-2个小圆点
   const dotCount = 1 + Math.floor(Math.random() * 2);
+  // 获取定义的淡雅色系
+  const colors = getComputedStyle(document.documentElement)
+    .getPropertyValue('--dot-colors')
+    .split(',')
+    .map(color => color.trim());
   
   for (let i = 0; i < dotCount; i++) {
     const dot = document.createElement('div');
-    dot.className = 'floating-dot';
-    
-    // 从文字位置开始
-    const startX = rect.left - containerRect.left;
-    const startY = rect.top - containerRect.top;
-    
-    dot.style.left = `${startX}px`;
-    dot.style.top = `${startY}px`;
-    dot.style.background = colors[Math.floor(Math.random() * colors.length)];
-    
-    // 雪花飘落效果
-    dot.style.animation = 'float 15s infinite linear';
-    dot.style.setProperty('--end-x', (Math.random() * containerRect.width).toFixed(2));
-    dot.style.setProperty('--end-y', (containerRect.height).toFixed(2));
+    dot.className = 'disappear-dot';
+    // 设置随机移动方向
+    dot.style.setProperty('--move-x', `${Math.random() * 2 - 1}rem`);
+    dot.style.setProperty('--move-y', `${Math.random() * 2 - 1}rem`);
+    // 设置初始位置（在字符位置附近随机偏移）
+    dot.style.left = `${x + Math.random() * 10 - 5}px`;
+    dot.style.top = `${y + Math.random() * 10 - 5}px`;
+    // 随机选择颜色
+    dot.style.setProperty('--dot-color', colors[Math.floor(Math.random() * colors.length)]);
+    // 设置动画持续时间和循环
+    dot.style.animation = `float ${3 + Math.random() * 4}s ease-in-out infinite`;
     
     container.appendChild(dot);
+    
+    // 设置小圆点随机消失
+    setTimeout(() => {
+      dot.style.opacity = '0';
+      setTimeout(() => dot.remove(), 1000);
+    }, 5000 + Math.random() * 5000);
   }
 }
 
-function createDisappearingChar(char) {
-  const span = document.createElement('span');
-  span.textContent = char + '\u200B'; // 添加零宽空格
-  span.className = 'disappearing-char';
-  
-  // 添加CSS样式防止选中
-  span.style.userSelect = 'none';
-  span.style.webkitUserSelect = 'none';
-  
-  return span;
-}
-
-// 初始化
-if (document.readyState !== 'loading') {
-  initDisappearEffect();
-} else {
-  document.addEventListener('DOMContentLoaded', initDisappearEffect);
-}
+// 当DOM加载完成后初始化效果
+document.addEventListener('DOMContentLoaded', initDisappearEffect);

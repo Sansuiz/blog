@@ -1,49 +1,40 @@
-/* 文字逐个消失效果 */
-.disappearing-char {
+/* 消失文字效果的基础样式 */
+.disappear-effect span {
   display: inline-block;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  transition: opacity 0.3s ease; /* 设置透明度过渡效果 */
 }
 
-.disappearing-char.faded {
-  opacity: 0;
-  transform: translateY(-5px);
+/* 隐藏状态的文字样式 */
+.disappear-effect span.hidden {
+  opacity: 0; /* 完全透明 */
 }
 
-/* 浮动圆点样式 */
-.floating-dot {
-  position: absolute;
+/* 小圆点的基本样式 */
+.disappear-dot {
+  position: absolute; /* 绝对定位 */
   width: 6px;
   height: 6px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10;
-  animation: float 15s infinite linear;
-  will-change: transform;
-  opacity: 0.8;
+  border-radius: 50%; /* 圆形 */
+  pointer-events: none; /* 防止干扰鼠标事件 */
+  z-index: 999; /* 确保在最上层 */
+  background-color: var(--dot-color); /* 使用CSS变量设置颜色 */
+  animation: float 3s ease-in-out infinite; /* 浮动动画 */
 }
 
+/* 浮动动画关键帧 */
 @keyframes float {
-  0% {
-    transform: translate(0, 0);
-    opacity: 0.8;
+  0%, 100% {
+    transform: translate(0, 0); /* 起始和结束位置 */
+    opacity: 1;
   }
-  100% {
-    transform: translate(
-      calc(var(--end-x) - var(--start-x)), 
-      calc(var(--end-y) - var(--start-y))
-    );
-    opacity: 0;
+  50% {
+    transform: translate(var(--move-x), var(--move-y)); /* 使用CSS变量设置随机移动 */
+    opacity: 0.8; /* 半透明效果 */
   }
 }
 
-/* 添加防止选中样式 */
-.disappearing-char {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-.disappearing-char::selection {
-  background: transparent;
+/* 定义淡雅色系的颜色变量 */
+:root {
+  --dot-colors: #E6F7FF, #D6E4FF, #F0F5FF, #E6FFFB, #F6FFED;
 }
