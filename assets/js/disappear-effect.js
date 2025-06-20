@@ -87,7 +87,7 @@ function animateDots(dots) {
 
 function getRandomIndices(textNodes) {
   const indices = [];
-  const count = Math.floor(textNodes.length * 0.6); // 消失60%的文字
+  const count = Math.floor(textNodes.length * 0.3); // 消失30%的文字
   
   while (indices.length < count) {
     const index = Math.floor(Math.random() * textNodes.length);
