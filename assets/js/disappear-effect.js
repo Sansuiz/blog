@@ -79,8 +79,8 @@ function createDotsAtPosition(element, container) {
   const containerRect = container.getBoundingClientRect();
   const colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF'];
   
-  // 创建2-4个圆点
-  const dotCount = 2 + Math.floor(Math.random() * 3);
+  // 创建1-2个圆点
+  const dotCount = 1 + Math.floor(Math.random() * 2);
   
   for (let i = 0; i < dotCount; i++) {
     const dot = document.createElement('div');
@@ -94,14 +94,13 @@ function createDotsAtPosition(element, container) {
     dot.style.left = `${x - containerRect.left}px`;
     dot.style.top = `${y - containerRect.top}px`;
     dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+    
+    // 持续漂浮效果
+    dot.style.animation = 'float 15s infinite linear';
     dot.style.setProperty('--move-x', (Math.random() * 2 - 1).toFixed(2));
     dot.style.setProperty('--move-y', Math.random().toFixed(2));
-    dot.style.animationDelay = `${i * 0.2}s`;
     
     container.appendChild(dot);
-    
-    // 动画结束后移除
-    dot.addEventListener('animationend', () => dot.remove());
   }
 }
 

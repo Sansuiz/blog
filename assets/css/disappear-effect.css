@@ -16,21 +16,34 @@
   height: 6px;
   border-radius: 50%;
   pointer-events: none;
-  animation: float 3s ease-out infinite;
-  opacity: 0;
+  z-index: 10;
+  animation: float 15s infinite linear;
 }
 
 @keyframes float {
   0% {
     transform: translate(0, 0);
-    opacity: 0.8;
+  }
+  25% {
+    transform: translate(
+      calc(var(--move-x) * 20px), 
+      calc(var(--move-y) * 20px)
+    );
+  }
+  50% {
+    transform: translate(
+      calc(var(--move-x) * 40px), 
+      calc(var(--move-y) * 40px)
+    );
+  }
+  75% {
+    transform: translate(
+      calc(var(--move-x) * 20px), 
+      calc(var(--move-y) * 20px)
+    );
   }
   100% {
-    transform: translate(
-      calc(var(--move-x) * 30px), 
-      calc(var(--move-y) * -40px)
-    );
-    opacity: 0;
+    transform: translate(0, 0);
   }
 }
 
