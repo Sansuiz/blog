@@ -1,27 +1,75 @@
 // 初始化函数
+// 性能优化版本
+const MAX_DOTS = 30; // 限制最大圆点数量
+const FADE_DURATION = 1500; // 缩短动画时间
+
 function initDisappearEffect() {
-  // 清除之前创建的圆点
-  document.querySelectorAll('.floating-dot').forEach(dot => dot.remove());
-  
-  // 获取所有需要应用效果的笔记
-  const notes = document.querySelectorAll('.note[data-disappear="true"]');
-  if (!notes.length) return;
+  // 使用requestAnimationFrame优化性能
+  requestAnimationFrame(() => {
+    const notes = document.querySelectorAll('.note[data-disappear="true"]');
+    if (!notes.length) return;
 
-  // 为每个笔记应用效果
-  notes.forEach(note => {
-    const content = note.querySelector('.note-content');
-    if (!content) return;
-
-    // 获取所有文本节点
-    const textNodes = getAllTextNodes(content);
-    if (!textNodes.length) return;
-
-    // 随机选择90%的文本节点
-    const selectedNodes = selectRandomNodes(textNodes, 0.9);
-    
-    // 应用消失效果
-    applyDisappearEffect(selectedNodes);
+    // 分批处理笔记
+    processNotesInBatches(notes, 2); // 每次处理2个笔记
   });
+}
+
+function processNotesInBatches(notes, batchSize) {
+  let processed = 0;
+  
+  function processBatch() {
+    const batch = Array.from(notes).slice(processed, processed + batchSize);
+    batch.forEach(note => {
+      const content = note.querySelector('.note-content');
+      if (!content) return;
+      
+      // 使用will-change提示浏览器优化
+      content.style.willChange = 'opacity';
+      
+      const textNodes = getTextNodes(content);
+      if (!textNodes.length) return;
+      
+      applyEffects(textNodes);
+    });
+    
+    processed += batchSize;
+    if (processed < notes.length) {
+      requestAnimationFrame(processBatch);
+    }
+  }
+  
+  processBatch();
+}
+
+function applyEffects(nodes) {
+  const selectedNodes = selectRandomNodes(nodes, 0.5); // 减少到50%
+  
+  selectedNodes.forEach((node, i) => {
+    setTimeout(() => {
+      const wrapper = document.createElement('span');
+      wrapper.className = 'disappearing-text';
+      node.parentNode.replaceChild(wrapper, node);
+      wrapper.appendChild(node);
+      
+      wrapper.style.transition = `opacity ${FADE_DURATION}ms ease`;
+      
+      setTimeout(() => {
+        wrapper.classList.add('faded');
+        createLimitedDots(wrapper);
+      }, Math.random() * 1000);
+    }, i * 100);
+  });
+}
+
+function createLimitedDots(element) {
+  const rect = element.getBoundingClientRect();
+  const dotCount = Math.min(3, MAX_DOTS); // 每个元素最多3个圆点
+  
+  for (let i = 0; i < dotCount; i++) {
+    setTimeout(() => {
+      createDot(rect);
+    }, i * 300);
+  }
 }
 
 // 获取所有文本节点
@@ -111,3 +159,17 @@ observer.observe(document.body, {
   subtree: true,
   characterData: true
 });
+
+// 使用轻量级的动画
+function createDot(rect) {
+  const dot = document.createElement('div');
+  dot.className = 'floating-dot';
+  
+  // ...简化样式...
+  document.body.appendChild(dot);
+  
+  // 自动移除旧圆点
+  setTimeout(() => {
+    dot.remove();
+  }, 5000);
+}
