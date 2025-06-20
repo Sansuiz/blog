@@ -1,29 +1,27 @@
-/* 重置所有样式 */
-.disappearing-text,
+/* 极简消失效果 */
+.disappearing-note {
+  transition: opacity 1s ease;
+}
+
+.disappearing-note.faded {
+  opacity: 0.3;
+}
+
+/* 极简圆点动画 */
 .floating-dot {
-  all: initial;
-}
-
-/* 文字消失效果 */
-.disappearing-text {
-  display: inline;
-  position: relative;
-  transition: opacity 2s ease-in-out, color 1s ease;
-}
-
-.disappearing-text.faded {
-  opacity: 0.1;
-  color: transparent !important;
-}
-
-/* 漂浮圆点效果 */
-.floating-dot {
-  animation: float 4s linear forwards;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0;
+  animation: float 3s ease-out forwards;
+  pointer-events: none;
 }
 
 @keyframes float {
   to {
-    transform: translate(50px, -50px);
-    opacity: 0;
+    transform: translate(40px, -30px);
+    opacity: 0.7;
   }
 }
