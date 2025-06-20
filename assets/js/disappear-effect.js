@@ -78,29 +78,35 @@ function selectRandomChars(chars, percentage) {
     .slice(0, Math.floor(chars.length * percentage));
 }
 
-function createDotsAtPosition(element) {
+function createDotsAtPosition(x, y, parentElement) {
   const rect = element.getBoundingClientRect();
   const colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF'];
   
-  // 创建2-4个圆点
-  const dotCount = 2 + Math.floor(Math.random() * 3);
+  // 获取父元素边界
+  const parentRect = parentElement.getBoundingClientRect();
   
+  // 创建2-4个小圆点
+  const dotCount = 2 + Math.floor(Math.random() * 3);
   for (let i = 0; i < dotCount; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'floating-dot';
-    
-    // 随机属性
-    dot.style.left = `${rect.left + rect.width/2}px`;
-    dot.style.top = `${rect.top}px`;
-    dot.style.background = colors[Math.floor(Math.random() * colors.length)];
-    dot.style.setProperty('--move-x', (Math.random() * 2 - 1).toFixed(2));
-    dot.style.setProperty('--move-y', Math.random().toFixed(2));
-    dot.style.animationDelay = `${i * 0.2}s`;
-    
-    document.body.appendChild(dot);
-    
-    // 动画结束后移除
-    dot.addEventListener('animationend', () => dot.remove());
+      const dot = document.createElement('div');
+      dot.className = 'disappear-dot';
+      
+      // 随机位置限制在父元素范围内
+      const randomX = Math.random() * parentRect.width;
+      const randomY = Math.random() * parentRect.height;
+      
+      // 随机属性
+      dot.style.left = `${rect.left + rect.width/2}px`;
+      dot.style.top = `${rect.top}px`;
+      dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+      dot.style.setProperty('--move-x', (Math.random() * 2 - 1).toFixed(2));
+      dot.style.setProperty('--move-y', Math.random().toFixed(2));
+      dot.style.animationDelay = `${i * 0.2}s`;
+      
+      document.body.appendChild(dot);
+      
+      // 动画结束后移除
+      dot.addEventListener('animationend', () => dot.remove());
   }
 }
 
