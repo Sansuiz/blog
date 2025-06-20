@@ -108,17 +108,25 @@ function getTextNodes(element) {
   const walker = document.createTreeWalker(
     element,
     NodeFilter.SHOW_TEXT,
-    null,
+    {
+      acceptNode: function(node) {
+        // 只包含非空且非纯空白字符的文本节点
+        return node.textContent.trim() ? 
+          NodeFilter.FILTER_ACCEPT : 
+          NodeFilter.FILTER_REJECT;
+      }
+    },
     false
   );
   
   const textNodes = [];
   let node;
   while (node = walker.nextNode()) {
-    if (node.textContent.trim()) {
-      textNodes.push(node);
-    }
+    console.log('Found text node:', node.textContent.trim()); // 调试日志
+    textNodes.push(node);
   }
+  
+  console.log('Total text nodes found:', textNodes.length); // 调试日志
   return textNodes;
 }
 
