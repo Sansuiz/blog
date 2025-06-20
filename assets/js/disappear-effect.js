@@ -1,4 +1,3 @@
-// 在initDisappearEffect函数中添加
 function initDisappearEffect() {
   const notes = document.querySelectorAll('.note[data-disappear="true"]');
   if (!notes.length) return;
@@ -23,12 +22,9 @@ function initDisappearEffect() {
       // 用span包裹每个字符
       const fragment = document.createDocumentFragment();
       chars.forEach((char, i) => {
-        const span = document.createElement('span');
-        span.textContent = char;
+        const span = createDisappearingChar(char);
         
         if (charsToFade.includes(i)) {
-          span.className = 'disappearing-char';
-          
           // 为每个字符设置随机延迟
           const delay = Math.random() * 3000;
           span.style.transitionDelay = `${delay}ms`;
@@ -36,7 +32,7 @@ function initDisappearEffect() {
           // 添加消失效果
           setTimeout(() => {
             span.classList.add('faded');
-            createDotsAtPosition(span);
+            createDotsAtPosition(span, note);
           }, delay + 500);
         }
         
@@ -78,8 +74,9 @@ function selectRandomChars(chars, percentage) {
     .slice(0, Math.floor(chars.length * percentage));
 }
 
-function createDotsAtPosition(element) {
+function createDotsAtPosition(element, container) {
   const rect = element.getBoundingClientRect();
+  const containerRect = container.getBoundingClientRect();
   const colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF'];
   
   // 创建2-4个圆点
@@ -89,29 +86,25 @@ function createDotsAtPosition(element) {
     const dot = document.createElement('div');
     dot.className = 'floating-dot';
     
-    // 随机属性
-    dot.style.left = `${rect.left + rect.width/2}px`;
-    dot.style.top = `${rect.top}px`;
+    // 确保圆点在容器范围内
+    const x = Math.min(Math.max(rect.left, containerRect.left), containerRect.right - 10);
+    const y = Math.min(Math.max(rect.top, containerRect.top), containerRect.bottom - 10);
+    
+    // 相对容器定位
+    dot.style.left = `${x - containerRect.left}px`;
+    dot.style.top = `${y - containerRect.top}px`;
     dot.style.background = colors[Math.floor(Math.random() * colors.length)];
     dot.style.setProperty('--move-x', (Math.random() * 2 - 1).toFixed(2));
     dot.style.setProperty('--move-y', Math.random().toFixed(2));
     dot.style.animationDelay = `${i * 0.2}s`;
     
-    document.body.appendChild(dot);
+    container.appendChild(dot);
     
     // 动画结束后移除
     dot.addEventListener('animationend', () => dot.remove());
   }
 }
 
-// 初始化
-if (document.readyState !== 'loading') {
-  initDisappearEffect();
-} else {
-  document.addEventListener('DOMContentLoaded', initDisappearEffect);
-}
-
-// 在创建消失字符时修改
 function createDisappearingChar(char) {
   const span = document.createElement('span');
   span.textContent = char + '\u200B'; // 添加零宽空格
@@ -122,4 +115,11 @@ function createDisappearingChar(char) {
   span.style.webkitUserSelect = 'none';
   
   return span;
+}
+
+// 初始化
+if (document.readyState !== 'loading') {
+  initDisappearEffect();
+} else {
+  document.addEventListener('DOMContentLoaded', initDisappearEffect);
 }
