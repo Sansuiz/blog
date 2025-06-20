@@ -67,20 +67,32 @@ function applyDisappearEffect(nodes) {
 }
 
 // 创建漂浮圆点
+// 更新颜色数组为柔和的色调
+const pastelColors = [
+  'rgba(200, 214, 229, 0.8)',  // 淡蓝
+  'rgba(214, 200, 229, 0.8)',  // 淡紫
+  'rgba(229, 200, 214, 0.8)',  // 淡粉
+  'rgba(200, 229, 214, 0.8)',  // 淡绿
+  'rgba(229, 214, 200, 0.8)',  // 淡黄
+  'rgba(214, 229, 200, 0.8)',  // 薄荷绿
+  'rgba(229, 200, 200, 0.8)',  // 淡红
+  'rgba(200, 200, 229, 0.8)'   // 淡蓝紫
+];
+
+// 修改createFloatingDots函数
 function createFloatingDots(element, count) {
   const rect = element.getBoundingClientRect();
-  const colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF', '#40C4FF', '#18FFFF', '#64FFDA', '#69F0AE'];
   
-  // 每个字符创建1-3个圆点
-  const dotCount = Math.min(count * 3, 100); // 限制最大100个圆点
+  // 每个字符创建1-2个圆点
+  const dotCount = Math.min(count * 2, 80);
   
   for (let i = 0; i < dotCount; i++) {
     const dot = document.createElement('div');
     dot.className = 'floating-dot';
     
     // 随机属性
-    const size = Math.random() * 12 + 3;
-    const color = colors[Math.floor(Math.random() * colors.length)];
+    const size = Math.random() * 8 + 3;
+    const color = pastelColors[Math.floor(Math.random() * pastelColors.length)];
     const left = rect.left + Math.random() * rect.width;
     const top = rect.top + Math.random() * rect.height;
     
@@ -91,7 +103,6 @@ function createFloatingDots(element, count) {
     dot.style.left = `${left}px`;
     dot.style.top = `${top}px`;
     dot.style.animationDelay = `${Math.random() * 5}s`;
-    dot.style.animationDuration = `${Math.random() * 3 + 4}s`;
     
     document.body.appendChild(dot);
   }

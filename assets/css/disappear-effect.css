@@ -8,12 +8,11 @@
 .disappearing-text {
   display: inline;
   position: relative;
-  transition: opacity 2s ease-in-out, color 1s ease;
+  transition: opacity 2s ease-in-out;
 }
 
 .disappearing-text.faded {
-  opacity: 0.1;
-  color: transparent !important;
+  opacity: 0 !important;
 }
 
 /* 漂浮圆点效果 */
@@ -26,6 +25,10 @@
   z-index: 9999;
   box-shadow: 0 0 10px currentColor;
   opacity: 0.8;
+  /* 使用更柔和的颜色 */
+  background: rgba(200, 214, 229, 0.8);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
 }
 
 @keyframes float {
