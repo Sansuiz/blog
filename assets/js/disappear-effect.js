@@ -75,6 +75,7 @@ function selectRandomChars(chars, percentage) {
 }
 
 function createDotsAtPosition(element, container) {
+  const rect = element.getBoundingClientRect();
   const containerRect = container.getBoundingClientRect();
   const colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF'];
   
@@ -85,18 +86,18 @@ function createDotsAtPosition(element, container) {
     const dot = document.createElement('div');
     dot.className = 'floating-dot';
     
-    // 在卡片容器内随机位置
-    const randomX = Math.random() * containerRect.width;
-    const randomY = Math.random() * containerRect.height;
+    // 从文字位置开始
+    const startX = rect.left - containerRect.left;
+    const startY = rect.top - containerRect.top;
     
-    dot.style.left = `${randomX}px`;
-    dot.style.top = `${randomY}px`;
+    dot.style.left = `${startX}px`;
+    dot.style.top = `${startY}px`;
     dot.style.background = colors[Math.floor(Math.random() * colors.length)];
     
-    // 持续漂浮效果
+    // 雪花飘落效果
     dot.style.animation = 'float 15s infinite linear';
-    dot.style.setProperty('--move-x', (Math.random() * 2 - 1).toFixed(2));
-    dot.style.setProperty('--move-y', Math.random().toFixed(2));
+    dot.style.setProperty('--end-x', (Math.random() * containerRect.width).toFixed(2));
+    dot.style.setProperty('--end-y', (containerRect.height).toFixed(2));
     
     container.appendChild(dot);
   }

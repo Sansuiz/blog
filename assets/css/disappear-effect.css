@@ -19,29 +19,20 @@
   z-index: 10;
   animation: float 15s infinite linear;
   will-change: transform;
+  opacity: 0.8;
 }
 
 @keyframes float {
-  0%, 100% {
+  0% {
     transform: translate(0, 0);
+    opacity: 0.8;
   }
-  25% {
+  100% {
     transform: translate(
-      calc(var(--move-x) * 50px), 
-      calc(var(--move-y) * 50px)
+      calc(var(--end-x) - var(--start-x)), 
+      calc(var(--end-y) - var(--start-y))
     );
-  }
-  50% {
-    transform: translate(
-      calc(var(--move-x) * 100px), 
-      calc(var(--move-y) * 100px)
-    );
-  }
-  75% {
-    transform: translate(
-      calc(var(--move-x) * 50px), 
-      calc(var(--move-y) * 50px)
-    );
+    opacity: 0;
   }
 }
 
