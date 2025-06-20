@@ -1,0 +1,23 @@
+.note.disappear-effect {
+  position: relative;
+}
+
+.disappearing-text {
+  transition: opacity 0.3s;
+}
+
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
+}
