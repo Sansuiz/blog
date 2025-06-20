@@ -10,6 +10,11 @@ function initDisappearEffect() {
     randomIndices.forEach((index, i) => {
       setTimeout(() => {
         const node = textNodes[index];
+        if (!node || !node.style) { // 添加检查
+          console.warn('Text node not found at index:', index);
+          return;
+        }
+        
         const range = document.createRange();
         range.selectNodeContents(node);
         const rect = range.getBoundingClientRect();
