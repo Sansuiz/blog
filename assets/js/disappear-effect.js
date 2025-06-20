@@ -75,7 +75,6 @@ function selectRandomChars(chars, percentage) {
 }
 
 function createDotsAtPosition(element, container) {
-  const rect = element.getBoundingClientRect();
   const containerRect = container.getBoundingClientRect();
   const colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF'];
   
@@ -86,13 +85,12 @@ function createDotsAtPosition(element, container) {
     const dot = document.createElement('div');
     dot.className = 'floating-dot';
     
-    // 确保圆点在容器范围内
-    const x = Math.min(Math.max(rect.left, containerRect.left), containerRect.right - 10);
-    const y = Math.min(Math.max(rect.top, containerRect.top), containerRect.bottom - 10);
+    // 在卡片容器内随机位置
+    const randomX = Math.random() * containerRect.width;
+    const randomY = Math.random() * containerRect.height;
     
-    // 相对容器定位
-    dot.style.left = `${x - containerRect.left}px`;
-    dot.style.top = `${y - containerRect.top}px`;
+    dot.style.left = `${randomX}px`;
+    dot.style.top = `${randomY}px`;
     dot.style.background = colors[Math.floor(Math.random() * colors.length)];
     
     // 持续漂浮效果
