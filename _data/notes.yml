@@ -1,7 +1,7 @@
 - date: 2025/06/19 15:09
   content: |
     这条便签可能会有文字消失。
-  disappear: true  # 新增字段
+  date-disappear: true  # 新增字段
   tags: [博客, 折腾]
 
 - date: 2025/06/19 00:09
