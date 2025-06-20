@@ -110,10 +110,8 @@ function getTextNodes(element) {
     NodeFilter.SHOW_TEXT,
     {
       acceptNode: function(node) {
-        // 只包含非空且非纯空白字符的文本节点
-        return node.textContent.trim() ? 
-          NodeFilter.FILTER_ACCEPT : 
-          NodeFilter.FILTER_REJECT;
+        // 跳过空白文本节点
+        return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
       }
     },
     false
@@ -122,11 +120,30 @@ function getTextNodes(element) {
   const textNodes = [];
   let node;
   while (node = walker.nextNode()) {
-    console.log('Found text node:', node.textContent.trim()); // 调试日志
     textNodes.push(node);
   }
   
-  console.log('Total text nodes found:', textNodes.length); // 调试日志
+  // 添加对Markdown渲染后HTML结构的处理
+  const markdownElements = element.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6, blockquote');
+  markdownElements.forEach(el => {
+    const innerWalker = document.createTreeWalker(
+      el,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: function(node) {
+          return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        }
+      },
+      false
+    );
+    
+    while (node = innerWalker.nextNode()) {
+      if (!textNodes.includes(node)) {
+        textNodes.push(node);
+      }
+    }
+  });
+  
   return textNodes;
 }
 
