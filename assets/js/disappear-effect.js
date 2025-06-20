@@ -1,3 +1,4 @@
+// 在initDisappearEffect函数中添加
 function initDisappearEffect() {
   const notes = document.querySelectorAll('.note[data-disappear="true"]');
   if (!notes.length) return;
@@ -45,6 +46,14 @@ function initDisappearEffect() {
       // 替换原始文本节点
       node.parentNode.replaceChild(fragment, node);
     });
+  });
+
+  // 阻止复制消失的文本
+  document.addEventListener('copy', (e) => {
+    const selection = window.getSelection();
+    if (selection.toString().includes('\u200B')) {
+      e.preventDefault();
+    }
   });
 }
 
@@ -100,4 +109,17 @@ if (document.readyState !== 'loading') {
   initDisappearEffect();
 } else {
   document.addEventListener('DOMContentLoaded', initDisappearEffect);
+}
+
+// 在创建消失字符时修改
+function createDisappearingChar(char) {
+  const span = document.createElement('span');
+  span.textContent = char + '\u200B'; // 添加零宽空格
+  span.className = 'disappearing-char';
+  
+  // 添加CSS样式防止选中
+  span.style.userSelect = 'none';
+  span.style.webkitUserSelect = 'none';
+  
+  return span;
 }

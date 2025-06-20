@@ -33,3 +33,15 @@
     opacity: 0;
   }
 }
+
+/* 添加防止选中样式 */
+.disappearing-char {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.disappearing-char::selection {
+  background: transparent;
+}
